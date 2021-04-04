@@ -1,2 +1,18 @@
-h1 Topics#index
-p Find me in app/views/topics/index.html.slim
+div
+  .col-md-5.offset-md-4
+    h2.text-center.pt-5
+      | Topic
+
+    = link_to '投稿', new_topic_path, class: 'btn btn-primary'
+
+    .mb-3
+    table.table.table-hover
+        thead.thread-default
+            tr
+                th= Topic.human_attribute_name(:title)
+                th= Topic.human_attribute_name(:created_at)
+        tbody
+            - @topics.each do |topic|
+                tr
+                    td= link_to topic.title, topic
+                    td= topic.created_at

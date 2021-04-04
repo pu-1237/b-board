@@ -1,2 +1,16 @@
-h1 Topics#show
-p Find me in app/views/topics/show.html.slim
+div
+    .col-md-4.offset-md-4
+        h2.text-center.pt-5
+            | 本文
+
+        .nav.justify-content-end
+            = link_to 'トピック一覧', topics_path, class: 'nav-link'
+
+        table.table.table-hover
+            tbody
+                tr
+                    th= Topic.human_attribute_name(:id)
+                    td= @topic.id
+                tr
+                    th= Topic.human_attribute_name(:title)
+                    td= @topic.title
