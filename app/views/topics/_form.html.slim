@@ -1,0 +1,6 @@
+        = form_with model: topic, local: true do |f|
+            .form-group
+                = f.text_field :title, class: 'form-control', id: 'topic_title', placeholder: 'Write down your idea'
+            .form-group
+                = f.text_area :body, rows:5, class: 'form-control', id: 'topic_body', placeholder: 'Tell us more about your idea'
+            = f.submit nil, class: 'btn btn-primary'

@@ -27,6 +27,14 @@ class TopicsController < ApplicationController
     redirect_to topics_url, notice: "トピック「#{topic.title}」を投稿しました。"
   end
 
+  def destroy
+    topic = Topic.find(params[:id])
+    topic.destroy
+    redirect_to topics_path, notice: "トピック「#{topic.title}」を削除しました。"
+  end
+
+
+
   private
   
   def topic_params
