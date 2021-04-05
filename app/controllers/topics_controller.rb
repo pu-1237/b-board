@@ -22,9 +22,12 @@ class TopicsController < ApplicationController
   end
 
   def create
-    topic = Topic.new(topic_params)
-    topic.save!
-    redirect_to topics_url, notice: "トピック「#{topic.title}」を投稿しました。"
+    @topic = Topic.new(topic_params)
+    if @topic.save
+        redirect_to topics_url, notice: "トピック「#{@topic.title}」を投稿しました。"
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -32,7 +35,6 @@ class TopicsController < ApplicationController
     topic.destroy
     redirect_to topics_path, notice: "トピック「#{topic.title}」を削除しました。"
   end
-
 
 
   private
