@@ -61,15 +61,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'kaminari'
 gem 'kaminari-i18n'
 
-# JQuery
-gem 'jquery-rails'
-
 # 画像の並べ替え
 gem 'acts_as_list'
-
-# ビューを効率よく記述する
-gem 'slim-rails'
-gem 'html2slim'
 
 # デフォルトCSSデザイン
 gem 'bootstrap'

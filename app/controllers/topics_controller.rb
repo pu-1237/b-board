@@ -17,7 +17,7 @@ class TopicsController < ApplicationController
 
   def update
     topic = Topic.find(params[:id])
-    topic.update!(task_params)
+    topic.update!(topic_params)
     redirect_to topics_path, notice: "トピック「#{topic.title}を編集しました」"
   end
 
